@@ -20,8 +20,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = Fighter("deidara", "left", self.canvas, (400, 330))
-        self.player_two = Fighter("sasori", "right", self.canvas, (100, 330))
+        self.player_one = Fighter("deidara", "right", self.canvas, (100, 330))
+        self.player_two = Fighter("kakashi", "left", self.canvas, (400, 330))
 
         self.canvas.pack()
         self.canvas.focus_set()

@@ -3,6 +3,7 @@ from PIL import ImageTk
 import os
 from Status import StatusBar
 
+
 class Fighter:
     animation_no = 0
     direction = "right"
@@ -66,3 +67,8 @@ class Fighter:
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
         self.redraw_sprite()
+
+
+class Bot(Fighter):
+    def __init__(self, name, initial_direction, sprite_canvas, pos):
+        super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
