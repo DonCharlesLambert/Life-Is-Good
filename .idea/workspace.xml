@@ -5,8 +5,44 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LifeIsGood.py" beforeDir="false" afterPath="$PROJECT_DIR$/LifeIsGood.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/mug.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/mug.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/realmug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/dash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/mug.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/mug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/19.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,43 +53,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../ChasinCheese/ChasinCheese.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="86" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Mario/Don Mario.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LifeIsGood.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Collision.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            <state relative-caret-position="-102">
+              <caret line="24" column="73" lean-forward="true" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,20 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Status.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="211">
+              <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -100,16 +94,17 @@
         <option value="$PROJECT_DIR$/Status.py" />
         <option value="$PROJECT_DIR$/Collision.py" />
         <option value="$PROJECT_DIR$/Bot.py" />
+        <option value="$PROJECT_DIR$/../Mario/Don Mario.py" />
         <option value="$PROJECT_DIR$/LifeIsGood.py" />
         <option value="$PROJECT_DIR$/Player.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1103" />
-    <option name="height" value="1943" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1104" />
+    <option name="height" value="1944" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -117,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,10 +123,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mario/Don Mario.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -241,47 +236,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ChasinCheese/ChasinCheese.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Status.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Mario/Don Mario.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LifeIsGood.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -292,10 +250,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Mario/Don Mario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="100" column="12" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ChasinCheese/ChasinCheese.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LifeIsGood.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="24" column="73" lean-forward="true" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="211">
+          <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

@@ -5,36 +5,47 @@ from Status import StatusBar
 
 
 class Fighter:
-    animation_no = 0
-    direction = "right"
-    action = "stance"
 
-    speed = 0.02
-    health = 0
-
-    sprite_img = None
-    sprite_item = None
-    sprites = {
-        "stance": [0, 1, 2, 3],
-        "run"   : [4, 5, 6, 7, 8, 9],
-        "attack": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-    }
+    NEXT_TO_THRESHOLD = 35
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
         self.canvas = sprite_canvas
-        self.pos = pos
         self.direction = initial_direction
-
-        self.draw_sprite()
+        self.opponent = None
         self.status_bar = StatusBar(self, initial_direction)
 
         self.CANVAS_WIDTH = self.canvas.winfo_reqwidth()
         self.CANVAS_HEIGHT = self.canvas.winfo_reqheight()
 
-    def draw_sprite(self):
+        self.animation_no = 0
+        self.direction = "right"
+        self.action = "stance"
+
+        self.speed = 0.02
+        self.health = 0
+
+        self.sprite_img = None
+        self.sprite_item = None
+
+        self.sprites = {
+            "stance": list(range(0, 4)),
+            "run"   : list(range(4, 10)),
+            "damage": list(range(10, 12)),
+            "fall"  : list(range(10, 15)),
+            "attack": list(range(16, 39))
+        }
+        self.draw_sprite(pos)
+
+    def set_animation_sprites(self, animation_name, image_numbers):
+        self.sprites[animation_name] = image_numbers
+
+    def set_opponent(self, player):
+        self.opponent = player
+
+    def draw_sprite(self, pos):
         self.get_sprite()
-        self.sprite_item = self.canvas.create_image(self.pos, image=self.sprite_img)
+        self.sprite_item = self.canvas.create_image(pos, image=self.sprite_img, anchor="se")
 
     def redraw_sprite(self):
         self.get_sprite()
@@ -47,12 +58,24 @@ class Fighter:
 
     # changing direction and action
     def change_state(self, direction, action):
-        if (direction != "") and (not direction == self.direction):
-            self.direction = direction
-            self.animation_no = 0
-        if (action != "") and (not action == self.action):
-            self.action = action
-            self.animation_no = 0
+        if self.action == "fall" and not self.end_of_animation():
+            pass
+        else:
+            if (direction != "") and (not direction == self.direction):
+                self.direction = direction
+                self.animation_no = 0
+            if (action != "") and (not action == self.action):
+                self.action = action
+                self.animation_no = 0
+            if direction == "switch":
+                if self.direction == "right":
+                    self.direction = "left"
+                else:
+                    self.direction = "right"
+                self.animation_no = 0
+
+    def pos(self):
+        return self.canvas.coords(self.sprite_item)
 
     def move(self):
         if self.action == "run":
@@ -64,11 +87,57 @@ class Fighter:
 
     # animating the character and moving
     def animate(self):
+        if self.received_combo():
+            self.change_state("", "fall")
+            if self.opponent.direction == "right":
+                self.canvas.move(self.sprite_item, 30, 0)
+            else:
+                self.canvas.move(self.sprite_item, -30, 0)
+        elif self.being_attacked():
+            self.change_state("", "damage")
+        elif not self.being_attacked() and self.action == "damage":
+            self.change_state("", "stance")
+        elif self.end_of_fall():
+            self.change_state("", "stance")
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
         self.redraw_sprite()
+
+    def being_attacked(self):
+        if self.opponent is None:
+            return False
+        elif self.next_to_opponent() and self.opponent.action == "attack":
+            return True
+
+    def received_combo(self):
+        if self.next_to_opponent() and self.opponent.action == "attack" and self.opponent.end_of_animation():
+            return True
+
+    def end_of_animation(self):
+        return self.animation_no == len(self.sprites[self.action]) - 1
+
+    def end_of_fall(self):
+        if self.action == "fall" and self.end_of_animation():
+            return True
+        return False
+
+    def next_to_opponent(self):
+        return abs(self.opponent.pos()[0] - self.pos()[0]) < self.NEXT_TO_THRESHOLD
 
 
 class Bot(Fighter):
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
+
+    def decide_movement(self):
+        print(self.action)
+        if self.action == "damage":
+            pass
+        elif self.opponent.action == "fall":
+            self.change_state("switch", "run")
+        #elif self.next_to_opponent():
+        #    self.change_state("", "attack")
+        elif self.opponent.pos()[0] < self.pos()[0]:
+            self.change_state("left", "run")
+        else:
+            self.change_state("right", "run")

@@ -1,5 +1,6 @@
 from tkinter import *
 from Player import Fighter
+from Player import Bot
 import winsound
 from time import sleep
 from PIL import Image
@@ -20,8 +21,14 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = Fighter("deidara", "right", self.canvas, (100, 330))
-        self.player_two = Fighter("kakashi", "left", self.canvas, (400, 330))
+        self.player_one = Fighter("deidara", "right", self.canvas, (100, 370))
+        self.player_two = Bot("kakashi", "left", self.canvas, (400, 370))
+
+        self.player_two.set_animation_sprites("stance", list(range(0, 6)))
+        self.player_two.set_animation_sprites("run", list(range(6, 12)))
+        self.player_two.set_animation_sprites("damage", list(range(12, 14)))
+        self.player_two.set_animation_sprites("fall", list(range(12, 18)))
+        self.player_two.set_animation_sprites("attack", list(range(18, 31)))
 
         self.canvas.pack()
         self.canvas.focus_set()
@@ -30,7 +37,10 @@ class Battle:
         self.game_window.after(0, self.game)
 
     def game(self):
+        self.player_one.set_opponent(self.player_two)
+        self.player_two.set_opponent(self.player_one)
         while True:
+            self.player_two.decide_movement()
             self.player_one.animate()
             self.player_two.animate()
             self.canvas.update()
@@ -51,6 +61,8 @@ class Battle:
             self.player_one.change_state("left", "run")
         if e.char == " ":
             self.player_one.change_state("", "attack")
+        if e.char == "s":
+            self.player_one.change_state("", "damage")
 
     def key_release(self, e):
         self.player_one.change_state("", "stance")
@@ -59,4 +71,5 @@ class Battle:
 root = Tk()
 Battle(root)
 root.mainloop()
+input()
 
