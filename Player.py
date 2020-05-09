@@ -8,6 +8,7 @@ import random
 class Fighter:
 
     NEXT_TO_THRESHOLD = 35
+    MOVE_BACK = 70
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
@@ -61,6 +62,8 @@ class Fighter:
     def change_state(self, direction, action):
         if self.action == "fall" and not self.end_of_animation():
             pass
+        elif self.action == "damage" and not self.end_of_animation():
+            pass
         else:
             if (direction != "") and (not direction == self.direction):
                 self.direction = direction
@@ -84,22 +87,30 @@ class Fighter:
                 speed = self.speed
             else:
                 speed = -self.speed
-            self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * speed, 0)
+
+            if 0 < self.pos()[0] + self.CANVAS_WIDTH * speed < self.CANVAS_WIDTH:
+                self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * speed, 0)
+
+    def move_back(self):
+        if self.direction == "right":
+            if 0 < self.pos()[0] - self.MOVE_BACK < self.CANVAS_WIDTH:
+                self.canvas.move(self.sprite_item, -self.MOVE_BACK, 0)
+        else:
+            if 0 < self.pos()[0] + self.MOVE_BACK < self.CANVAS_WIDTH:
+                self.canvas.move(self.sprite_item, 70, 0)
 
     # animating the character and moving
     def animate(self):
-        if self.received_combo():
+        if self.end_of_fall():
+            self.move_back()
+            self.change_state("", "stance")
+        elif self.received_combo():
             self.change_state("", "fall")
         elif self.being_attacked():
             self.change_state("", "damage")
         elif not self.being_attacked() and self.action == "damage":
             self.change_state("", "stance")
-        elif self.end_of_fall():
-            if self.direction == "right":
-                self.canvas.move(self.sprite_item, -70, 0)
-            else:
-                self.canvas.move(self.sprite_item, 70, 0)
-            self.change_state("", "stance")
+
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
         self.redraw_sprite()
