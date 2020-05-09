@@ -9,7 +9,7 @@ class Fighter:
 
     NEXT_TO_THRESHOLD = 35
     MOVE_BACK = 70
-    JUMP_HEIGHT = 40
+    JUMP_HEIGHT = 20
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
@@ -37,7 +37,7 @@ class Fighter:
             "damage": list(range(10, 12)),
             "fall"  : list(range(10, 15)),
             "attack": list(range(16, 39)),
-            "jump"  : list(range(39, 44))
+            "jump"  : [39, 39, 40, 40, 41, 41, 42, 42, 43]
         }
         self.draw_sprite(pos)
 
@@ -67,7 +67,12 @@ class Fighter:
         elif self.action == "damage" and not self.end_of_animation():
             pass
         elif self.action == "jump" and not self.end_of_animation():
-            pass
+            if direction != "":
+                self.direction = direction
+                if self.direction == "right":
+                    self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * self.speed * 2, 0)
+                else:
+                    self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * -self.speed * 2, 0)
         else:
             if (direction != "") and (not direction == self.direction):
                 self.direction = direction
@@ -165,6 +170,10 @@ class Fighter:
 class Bot(Fighter):
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
+
+    def animate(self):
+        super().animate()
+        self.decide_movement()
 
     def decide_movement(self):
         if self.action == "damage" or self.action == "fall":

@@ -40,7 +40,6 @@ class Battle:
         self.player_one.set_opponent(self.player_two)
         self.player_two.set_opponent(self.player_one)
         while True:
-            self.player_two.decide_movement()
             self.player_one.animate()
             self.player_two.animate()
             self.canvas.update()
@@ -55,6 +54,9 @@ class Battle:
         self.images.append(bg_image)
 
     def key_press(self, e):
+        # this logic needs to be moved to player
+        # change state should be a private function
+        # this is the root of all kinds of spaghetti 🍝
         if e.char == "d":
             self.player_one.change_state("right", "run")
         if e.char == "a":
@@ -62,11 +64,12 @@ class Battle:
         if e.char == " ":
             self.player_one.change_state("", "attack")
         if e.char == "s":
-            self.player_one.change_state("", "damage")
+            self.player_one.change_state("", "fall")
         if e.char == "w":
             self.player_one.change_state("", "jump")
 
     def key_release(self, e):
+        # ew ew ew ew ew ew ew
         self.player_one.change_state("", "stance")
 
 
