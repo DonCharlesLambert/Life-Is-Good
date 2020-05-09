@@ -2,6 +2,7 @@ from PIL import Image
 from PIL import ImageTk
 import os
 from Status import StatusBar
+import random
 
 
 class Fighter:
@@ -89,15 +90,15 @@ class Fighter:
     def animate(self):
         if self.received_combo():
             self.change_state("", "fall")
-            if self.opponent.direction == "right":
-                self.canvas.move(self.sprite_item, 30, 0)
-            else:
-                self.canvas.move(self.sprite_item, -30, 0)
         elif self.being_attacked():
             self.change_state("", "damage")
         elif not self.being_attacked() and self.action == "damage":
             self.change_state("", "stance")
         elif self.end_of_fall():
+            if self.direction == "right":
+                self.canvas.move(self.sprite_item, -70, 0)
+            else:
+                self.canvas.move(self.sprite_item, 70, 0)
             self.change_state("", "stance")
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
@@ -130,13 +131,17 @@ class Bot(Fighter):
         super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
 
     def decide_movement(self):
-        print(self.action)
-        if self.action == "damage":
+        if self.action == "damage" or self.action == "fall":
             pass
         elif self.opponent.action == "fall":
             self.change_state("switch", "run")
-        #elif self.next_to_opponent():
-        #    self.change_state("", "attack")
+        elif self.action == "attack":
+            pass
+        elif self.next_to_opponent():
+            if random.random() < 0.2:
+                self.change_state("", "attack")
+            else:
+                self.change_state("", "stance")
         elif self.opponent.pos()[0] < self.pos()[0]:
             self.change_state("left", "run")
         else:

@@ -3,46 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="adcf887f-ccd7-40d0-bbbc-701649e37359" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LifeIsGood.py" beforeDir="false" afterPath="$PROJECT_DIR$/LifeIsGood.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/left/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/left/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/deidara/right/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/deidara/right/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/dash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/left/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/left/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/mug.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/mug.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/kakashi/right/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/kakashi/right/19.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LifeIsGood.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="24" column="73" lean-forward="true" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+            <state relative-caret-position="62">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -67,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+            <state relative-caret-position="-451">
+              <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -207,7 +168,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24960254" />
@@ -218,7 +178,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -279,8 +239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LifeIsGood.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="24" column="73" lean-forward="true" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+        <state relative-caret-position="62">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -289,8 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+        <state relative-caret-position="-451">
+          <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
