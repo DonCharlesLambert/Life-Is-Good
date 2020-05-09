@@ -63,6 +63,8 @@ class Battle:
             self.player_one.change_state("", "attack")
         if e.char == "s":
             self.player_one.change_state("", "damage")
+        if e.char == "w":
+            self.player_one.change_state("", "jump")
 
     def key_release(self, e):
         self.player_one.change_state("", "stance")

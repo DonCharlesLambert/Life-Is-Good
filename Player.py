@@ -9,6 +9,7 @@ class Fighter:
 
     NEXT_TO_THRESHOLD = 35
     MOVE_BACK = 70
+    JUMP_HEIGHT = 40
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
@@ -35,7 +36,8 @@ class Fighter:
             "run"   : list(range(4, 10)),
             "damage": list(range(10, 12)),
             "fall"  : list(range(10, 15)),
-            "attack": list(range(16, 39))
+            "attack": list(range(16, 39)),
+            "jump"  : list(range(39, 44))
         }
         self.draw_sprite(pos)
 
@@ -63,6 +65,8 @@ class Fighter:
         if self.action == "fall" and not self.end_of_animation():
             pass
         elif self.action == "damage" and not self.end_of_animation():
+            pass
+        elif self.action == "jump" and not self.end_of_animation():
             pass
         else:
             if (direction != "") and (not direction == self.direction):
@@ -104,6 +108,10 @@ class Fighter:
         if self.end_of_fall():
             self.move_back()
             self.change_state("", "stance")
+        elif self.end_of_jump():
+            self.change_state("", "stance")
+        elif self.action == "jump":
+            self.jump_path()
         elif self.received_combo():
             self.change_state("", "fall")
         elif self.being_attacked():
@@ -130,6 +138,23 @@ class Fighter:
 
     def end_of_fall(self):
         if self.action == "fall" and self.end_of_animation():
+            return True
+        return False
+
+    def jump_path(self):
+        if len(self.sprites[self.action]) % 2 == 0:
+            if self.animation_no < len(self.sprites[self.action])/2:
+                self.canvas.move(self.sprite_item, 0, -self.JUMP_HEIGHT)
+            else:
+                self.canvas.move(self.sprite_item, 0, self.JUMP_HEIGHT)
+        else:
+            if self.animation_no < len(self.sprites[self.action])/2 - 1:
+                self.canvas.move(self.sprite_item, 0, -self.JUMP_HEIGHT)
+            elif self.animation_no != len(self.sprites[self.action]) - 1:
+                self.canvas.move(self.sprite_item, 0, self.JUMP_HEIGHT)
+
+    def end_of_jump(self):
+        if self.action == "jump" and self.end_of_animation():
             return True
         return False
 
