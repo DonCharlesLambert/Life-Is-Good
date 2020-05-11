@@ -180,6 +180,8 @@ class Bot(Fighter):
             pass
         elif self.opponent.action == "fall":
             self.change_state("switch", "run")
+        elif self.action == "attack" and self.opponent.action != "damage":
+            self.change_state("", "stance")
         elif self.action == "attack":
             pass
         elif self.next_to_opponent():
