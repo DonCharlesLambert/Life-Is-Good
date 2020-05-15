@@ -10,15 +10,15 @@ Life was good, but life is better.
 Life Is Good is a Naruto fighting game made using the tkinter library for Python. The project is a hobby for when I want to procrastinate.
 
 ## Get it Running
-1. Open Terminal
+1. Open Terminal  
 
-2. Clone the Repo
+2. Clone the Repo  
 `C:\> git clone https://github.com/DonCharlesLambert/Life-Is-Good`  
 
-3. Enter the Repo
+3. Enter the Repo  
 `C:\> cd LifeIsGood`  
 
-4. Install the required libraries
+4. Install the required libraries  
 `C:\LifeIsGood> pip install -r requirements.txt`  
 
 5. Run the Game

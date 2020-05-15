@@ -23,6 +23,7 @@ class Fighter:
     # DIRECTION CONSTANTS
     RIGHT = "right"
     LEFT = "left"
+    SWITCH = "switch"
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
@@ -252,20 +253,32 @@ class Bot(Fighter):
         self.decide_movement()
 
     def decide_movement(self):
-        if self.action == "damage" or self.action == "fall":
+        if self.action_is(self.DAMAGE) or self.action_is(self.FALL):
             pass
-        elif self.opponent.action == "fall":
-            self.change_state("switch", self.RUN)
-        elif self.action == "attack" and self.opponent.action != "damage":
+
+        elif self.opponent.action_is(self.FALL):
+            self.change_state(self.SWITCH, self.RUN)
+
+        elif self.action_is(self.ATTACK) and not self.opponent.action_is(self.DAMAGE):
             self.change_state("", self.STANCE)
-        elif self.action == "attack":
+
+        elif self.action_is(self.ATTACK):
             pass
+
         elif self.next_to_opponent():
-            if random.random() < 0.2:
-                self.change_state("", self.ATTACK)
-            else:
-                self.change_state("", self.STANCE)
-        elif self.opponent.pos()[0] < self.pos()[0]:
+            self.decide_to_attack()
+
+        else:
+            self.run_to_opponent()
+
+    def decide_to_attack(self):
+        if random.random() < 0.2:
+            self.change_state("", self.ATTACK)
+        else:
+            self.change_state("", self.STANCE)
+
+    def run_to_opponent(self):
+        if self.opponent.pos()[0] < self.pos()[0]:
             self.change_state(self.LEFT, self.RUN)
         else:
             self.change_state(self.RIGHT, self.RUN)
