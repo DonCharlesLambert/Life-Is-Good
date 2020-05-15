@@ -2,11 +2,13 @@ from PIL import Image
 from PIL import ImageTk
 import os
 from Status import StatusBar
-import random
 
 
 # 🍝
 class Fighter:
+    # FOLDER CONSTANT
+    SPRITE_FOLDER = 'sprites'
+
     # MOVEMENT & COLLISION CONSTANTS
     NEXT_TO_THRESHOLD = 35
     MOVE_BACK = 70
@@ -24,6 +26,7 @@ class Fighter:
     RIGHT = "right"
     LEFT = "left"
     SWITCH = "switch"
+    REMAIN = ""
 
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         self.name = name
@@ -46,12 +49,12 @@ class Fighter:
         self.sprite_item = None
 
         self.sprites = {
-            "stance": list(range(0, 4)),
-            "run"   : list(range(4, 10)),
-            "damage": list(range(10, 12)),
-            "fall"  : list(range(10, 15)),
-            "attack": list(range(16, 39)),
-            "jump"  : [39, 39, 40, 40, 41, 41, 42, 42, 43]
+            self.STANCE : list(range(0, 4)),
+            self.RUN    : list(range(4, 10)),
+            self.DAMAGE : list(range(10, 12)),
+            self.FALL   : list(range(10, 15)),
+            self.ATTACK : list(range(16, 39)),
+            self.JUMP   : [39, 39, 40, 40, 41, 41, 42, 42, 43]
         }
         self.draw_sprite_img(pos)
 
@@ -60,7 +63,7 @@ class Fighter:
     ''''''''''''''''''''''''''''''''''''''''''''
 
     def stance(self):
-        self.change_state("", self.STANCE)
+        self.change_state(self.REMAIN, self.STANCE)
 
     def right(self):
         self.change_state(self.RIGHT, self.RUN)
@@ -69,13 +72,16 @@ class Fighter:
         self.change_state(self.LEFT, self.RUN)
 
     def attack(self):
-        self.change_state("", self.ATTACK)
-
-    def fall(self):
-        self.change_state("", self.FALL)
+        self.change_state(self.REMAIN, self.ATTACK)
 
     def jump(self):
-        self.change_state("", self.JUMP)
+        self.change_state(self.REMAIN, self.JUMP)
+
+    def damage(self):
+        self.change_state(self.opponent.backside(), self.DAMAGE)
+
+    def fall(self):
+        self.change_state(self.REMAIN, self.FALL)
 
     ''''''''''''''''''''''''''''''''''''''''''''
     '''              SETTERS                 '''
@@ -87,12 +93,22 @@ class Fighter:
     def set_opponent(self, player):
         self.opponent = player
 
+    def switch_direction(self):
+        if self.is_facing(self.RIGHT):
+            self.direction = self.LEFT
+        else:
+            self.direction = self.RIGHT
+        self.animation_no = 0
+
     ''''''''''''''''''''''''''''''''''''''''''''
     '''              GETTERS                 '''
     ''''''''''''''''''''''''''''''''''''''''''''
 
     def pos(self):
         return self.canvas.coords(self.sprite_item)
+
+    def backside(self):
+        return self.RIGHT if self.direction == self.LEFT else self.LEFT
 
     ''''''''''''''''''''''''''''''''''''''''''''
     '''             CHECKERS                 '''
@@ -146,7 +162,7 @@ class Fighter:
 
     def get_sprite_img(self):
         img_no = self.sprites[self.action][self.animation_no]
-        img = Image.open(os.path.join('sprites', self.name, self.direction, str(img_no) + ".png"))
+        img = Image.open(os.path.join(self.SPRITE_FOLDER, self.name, self.direction, str(img_no) + ".png"))
         self.sprite_img = ImageTk.PhotoImage(img)
 
     ''''''''''''''''''''''''''''''''''''''''''''
@@ -194,23 +210,19 @@ class Fighter:
         elif self.action_not_finished(self.JUMP):
             self.move_while_jumping(direction)
         else:
-            if (direction != "") and (not direction == self.direction):
+            if (direction != self.REMAIN) and (not direction == self.direction):
                 self.direction = direction
                 self.animation_no = 0
-            if (action != "") and (not action == self.action):
+            if (action != self.REMAIN) and (not action == self.action):
                 self.action = action
                 self.animation_no = 0
-            if direction == "switch":
-                if self.is_facing(self.RIGHT):
-                    self.direction = self.LEFT
-                else:
-                    self.direction = self.RIGHT
-                self.animation_no = 0
+            if direction == self.SWITCH:
+                self.switch_direction()
 
     def move_while_jumping(self, direction):
-        if direction != "":
+        if direction != self.REMAIN:
             self.direction = direction
-            if self.direction == "right":
+            if self.direction == self.RIGHT:
                 self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * self.speed * 2, 0)
             else:
                 self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * -self.speed * 2, 0)
@@ -234,51 +246,11 @@ class Fighter:
             self.fall()
 
         elif self.being_attacked():
-            self.change_state("", "damage")
+            self.damage()
 
-        elif not self.being_attacked() and self.action == "damage":
+        elif not self.being_attacked() and self.action_is(self.DAMAGE):
             self.stance()
 
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
         self.redraw_sprite_img()
-
-
-class Bot(Fighter):
-    def __init__(self, name, initial_direction, sprite_canvas, pos):
-        super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
-
-    def animate(self):
-        super().animate()
-        self.decide_movement()
-
-    def decide_movement(self):
-        if self.action_is(self.DAMAGE) or self.action_is(self.FALL):
-            pass
-
-        elif self.opponent.action_is(self.FALL):
-            self.change_state(self.SWITCH, self.RUN)
-
-        elif self.action_is(self.ATTACK) and not self.opponent.action_is(self.DAMAGE):
-            self.change_state("", self.STANCE)
-
-        elif self.action_is(self.ATTACK):
-            pass
-
-        elif self.next_to_opponent():
-            self.decide_to_attack()
-
-        else:
-            self.run_to_opponent()
-
-    def decide_to_attack(self):
-        if random.random() < 0.2:
-            self.change_state("", self.ATTACK)
-        else:
-            self.change_state("", self.STANCE)
-
-    def run_to_opponent(self):
-        if self.opponent.pos()[0] < self.pos()[0]:
-            self.change_state(self.LEFT, self.RUN)
-        else:
-            self.change_state(self.RIGHT, self.RUN)

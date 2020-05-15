@@ -1,6 +1,6 @@
 from tkinter import *
 from Player import Fighter
-from Player import Bot
+from Bot import Bot
 import winsound
 from time import sleep
 from PIL import Image
