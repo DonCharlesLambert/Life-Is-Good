@@ -62,7 +62,7 @@ class Fighter:
 
     # changing direction and action
     def change_state(self, direction, action):
-        if self.action == "fall" and not self.end_of_animation():
+        if self.action == "fall" and not self.end_of_fall():
             pass
         elif self.action == "damage" and not self.end_of_animation():
             pass
