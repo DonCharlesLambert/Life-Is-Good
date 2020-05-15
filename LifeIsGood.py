@@ -54,23 +54,17 @@ class Battle:
         self.images.append(bg_image)
 
     def key_press(self, e):
-        # this logic needs to be moved to player
-        # change state should be a private function
-        # this is the root of all kinds of spaghetti 🍝
         if e.char == "d":
-            self.player_one.change_state("right", "run")
+            self.player_one.right()
         if e.char == "a":
-            self.player_one.change_state("left", "run")
+            self.player_one.left()
         if e.char == " ":
-            self.player_one.change_state("", "attack")
-        if e.char == "s":
-            self.player_one.change_state("", "fall")
+            self.player_one.attack()
         if e.char == "w":
-            self.player_one.change_state("", "jump")
+            self.player_one.jump()
 
     def key_release(self, e):
-        # ew ew ew ew ew ew ew
-        self.player_one.change_state("", "stance")
+        self.player_one.stance()
 
 
 root = Tk()
