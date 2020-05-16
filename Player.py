@@ -21,6 +21,7 @@ class Fighter:
     FALL = "fall"
     JUMP = "jump"
     DAMAGE = "damage"
+    DEAD = "dead"
 
     # DIRECTION CONSTANTS
     RIGHT = "right"
@@ -44,6 +45,7 @@ class Fighter:
 
         self.speed = 0.02
         self.health = 100
+        self.dead = False
 
         self.sprite_img = None
         self.sprite_item = None
@@ -71,6 +73,9 @@ class Fighter:
     def left(self):
         self.change_state(self.LEFT, self.RUN)
 
+    def away(self):
+        self.change_state(self.SWITCH, self.RUN)
+
     def attack(self):
         self.change_state(self.REMAIN, self.ATTACK)
 
@@ -81,6 +86,10 @@ class Fighter:
         self.change_state(self.opponent.backside(), self.DAMAGE)
 
     def fall(self):
+        self.change_state(self.REMAIN, self.FALL)
+
+    def die(self):
+        self.dead = True
         self.change_state(self.REMAIN, self.FALL)
 
     ''''''''''''''''''''''''''''''''''''''''''''
@@ -203,7 +212,9 @@ class Fighter:
     ''''''''''''''''''''''''''''''''''''''''''''
     # changing direction and action
     def change_state(self, direction, action):
-        if self.action_not_finished(self.FALL):
+        if self.dead:
+            self.action = action
+        elif self.action_not_finished(self.FALL):
             pass
         elif self.action_not_finished(self.DAMAGE):
             pass
@@ -232,6 +243,12 @@ class Fighter:
     ''''''''''''''''''''''''''''''''''''''''''''
     # animating the character and moving
     def animate(self):
+        if self.dead and self.end_of_action(self.FALL):
+            return
+
+        elif self.action_is(self.DAMAGE):
+            self.take_damage()
+
         if self.end_of_action(self.FALL):
             self.move_back()
             self.stance()
@@ -254,3 +271,9 @@ class Fighter:
         self.move()
         self.animation_no = (self.animation_no + 1) % (len(self.sprites[self.action]))
         self.redraw_sprite_img()
+
+    def take_damage(self):
+        self.health -= 1
+        if self.health <= 0:
+            self.die()
+        print(self.name, ":", self.health)

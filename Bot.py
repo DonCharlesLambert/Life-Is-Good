@@ -14,8 +14,8 @@ class Bot(Fighter):
         if self.action_is(self.DAMAGE) or self.action_is(self.FALL):
             pass
 
-        elif self.opponent.action_is(self.FALL):
-            self.change_state(self.SWITCH, self.RUN)
+        elif self.opponent.action_is(self.FALL) and not self.action_is(self.RUN):
+            self.away()
 
         elif self.action_is(self.ATTACK) and not self.opponent.action_is(self.DAMAGE):
             self.stance()
