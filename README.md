@@ -38,7 +38,7 @@ Life Is Good is a Naruto fighting game made using the tkinter library for Python
  - [x] Music
  - [x] Basic character fight mechanism
  - [x] Basic character jump mechanism
- - [ ] Health bar reflecting health
+ - [x] Health bar reflecting health
  - [ ] End fight screen
  - [ ] Character select screen
  - [ ] Main Menu

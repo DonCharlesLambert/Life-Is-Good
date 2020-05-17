@@ -14,6 +14,10 @@ class Fighter:
     MOVE_BACK = 70
     JUMP_HEIGHT = 20
 
+    # HEALTH CONSTANTS
+    MAX_HEALTH = 100
+    DAMAGE_PER_SECOND = 1
+
     # ACTION CONSTANTS
     STANCE = "stance"
     RUN = "run"
@@ -44,7 +48,7 @@ class Fighter:
         self.action = self.STANCE
 
         self.speed = 0.02
-        self.health = 100
+        self.health = self.MAX_HEALTH
         self.dead = False
 
         self.sprite_img = None
@@ -273,7 +277,7 @@ class Fighter:
         self.redraw_sprite_img()
 
     def take_damage(self):
-        self.health -= 1
+        self.health -= self.DAMAGE_PER_SECOND
+        self.status_bar.update()
         if self.health <= 0:
             self.die()
-        print(self.name, ":", self.health)
