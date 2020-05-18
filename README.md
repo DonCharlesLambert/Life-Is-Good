@@ -24,7 +24,7 @@ Life Is Good is a Naruto fighting game made using the tkinter library for Python
 5. Run the Game  
 `C:\LifeIsGood> python LifeIsGood.py`  
 
-![Screenshot from the Game](https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss.png?raw=true)
+<img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss.png?raw=true" style="margin:auto" width="60%" alt="Screenshot From the Game"/>
 
 ## Controls
 |w |a |d | space |
@@ -59,7 +59,7 @@ You can also change the fighter creator method to play as Kakashi:
 self.player_one = self.create_kakashi(False, self.PLAYER_ONE_POSITION)
 ```
 As of 18th May, Kakashi does not have jumping sprites and the game will crash when you jump as him, however Kakashi works completely fine as an AI.
-![An AIvsAI battle](https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss2.png?raw=true)
+<img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss2.png?raw=true" style="margin:auto" width="60%" alt="An AI vs AI battle"/>
 
 ## Todo
 Move the player being attacked so that they are always in the visibile hitbox if caught in the attack
