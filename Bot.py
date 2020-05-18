@@ -5,6 +5,7 @@ from Player import Fighter
 class Bot(Fighter):
     def __init__(self, name, initial_direction, sprite_canvas, pos):
         super(Bot, self).__init__(name, initial_direction, sprite_canvas, pos)
+        self.is_bot = True
 
     def animate(self):
         super().animate()

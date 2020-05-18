@@ -12,6 +12,10 @@ HEIGHT = 400
 
 class Battle:
     images = []
+    PLAYER_ONE_POSITION = (100, 370)
+    PLAYER_TWO_POSITION = (400, 370)
+    LEFT  = "left"
+    RIGHT = "right"
 
     def __init__(self, game_window):
         self.game_window = game_window
@@ -21,14 +25,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = Fighter("deidara", "right", self.canvas, (100, 370))
-        self.player_two = Bot("kakashi", "left", self.canvas, (400, 370))
-
-        self.player_two.set_animation_sprites("stance", list(range(0, 6)))
-        self.player_two.set_animation_sprites("run", list(range(6, 12)))
-        self.player_two.set_animation_sprites("damage", list(range(12, 14)))
-        self.player_two.set_animation_sprites("fall", list(range(12, 18)))
-        self.player_two.set_animation_sprites("attack", list(range(18, 31)))
+        self.player_one = self.create_deidara(True, self.PLAYER_ONE_POSITION)
+        self.player_two = self.create_sasori(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
@@ -54,17 +52,78 @@ class Battle:
         self.images.append(bg_image)
 
     def key_press(self, e):
-        if e.char == "d":
-            self.player_one.right()
-        if e.char == "a":
-            self.player_one.left()
-        if e.char == " ":
-            self.player_one.attack()
-        if e.char == "w":
-            self.player_one.jump()
+        self.player_one_controller_press(e)
+        self.player_two_controller_press(e)
 
     def key_release(self, e):
-        self.player_one.stance()
+        self.player_one_controller_release(e)
+        self.player_two_controller_release(e)
+
+    def player_one_controller_press(self, e):
+        if not self.player_one.is_bot:
+            if e.char == "d":
+                self.player_one.right()
+            if e.char == "a":
+                self.player_one.left()
+            if e.char == " ":
+                self.player_one.attack()
+            if e.char == "w":
+                self.player_one.jump()
+
+    def player_two_controller_press(self, e):
+        if not self.player_two.is_bot:
+            if e.char == "l":
+                self.player_two.right()
+            if e.char == "j":
+                self.player_two.left()
+            if e.char == "k":
+                self.player_two.attack()
+            if e.char == "i":
+                self.player_two.jump()
+
+    def player_one_controller_release(self, e):
+        if not self.player_one.is_bot:
+            if e.char in ['w', 'a', ' ', 'd']:
+                self.player_one.stance()
+
+    def player_two_controller_release(self, e):
+        if not self.player_two.is_bot:
+            if e.char in ['i', 'j', 'k', 'l']:
+                self.player_two.stance()
+
+    def create_fighter(self, ai, name, position):
+        direction = self.RIGHT
+        if position == self.PLAYER_TWO_POSITION:
+            direction = "left"
+
+        if ai:
+            fighter = Bot(name, direction, self.canvas, position)
+        else:
+            fighter = Fighter(name, direction, self.canvas, position)
+        return fighter
+
+    def create_deidara(self, ai, position):
+        fighter = self.create_fighter(ai, "deidara", position)
+        return fighter
+
+    def create_kakashi(self, ai, position):
+        fighter = self.create_fighter(ai, "kakashi", position)
+        fighter.set_animation_sprites("stance", list(range(0, 6)))
+        fighter.set_animation_sprites("run", list(range(6, 12)))
+        fighter.set_animation_sprites("damage", list(range(12, 14)))
+        fighter.set_animation_sprites("fall", list(range(12, 18)))
+        fighter.set_animation_sprites("attack", list(range(18, 31)))
+        return fighter
+
+    def create_sasori(self, ai, position):
+        fighter = self.create_fighter(ai, "sasori", position)
+        fighter.set_animation_sprites("stance", list(range(0, 6)))
+        fighter.set_animation_sprites("run", list(range(6, 12)))
+        fighter.set_animation_sprites("damage", list(range(12, 14)))
+        fighter.set_animation_sprites("fall", list(range(12, 18)))
+        fighter.set_animation_sprites("attack", list(range(18, 40)))
+        fighter.set_animation_sprites("jump", (list(range(40, 45))+list(range(40, 45))))
+        return fighter
 
 
 root = Tk()

@@ -38,6 +38,7 @@ class Fighter:
         self.canvas = sprite_canvas
         self.direction = initial_direction
         self.opponent = None
+        self.is_bot = False
         self.status_bar = StatusBar(self, initial_direction)
 
         self.CANVAS_WIDTH = self.canvas.winfo_reqwidth()
@@ -201,9 +202,9 @@ class Fighter:
 
     def jump_path(self):
         if len(self.sprites[self.action]) % 2 == 0:
-            if self.animation_no < len(self.sprites[self.action]) / 2:
+            if self.animation_no < (len(self.sprites[self.action]) / 2 - 1):
                 self.canvas.move(self.sprite_item, 0, -self.JUMP_HEIGHT)
-            else:
+            elif self.animation_no != len(self.sprites[self.action]) - 2:
                 self.canvas.move(self.sprite_item, 0, self.JUMP_HEIGHT)
         else:
             if self.animation_no < len(self.sprites[self.action]) / 2 - 1:
@@ -217,10 +218,10 @@ class Fighter:
     # changing direction and action
     def change_state(self, direction, action):
         if self.dead:
-            self.action = action
+            self.action = self.FALL
         elif self.action_not_finished(self.FALL):
             pass
-        elif self.action_not_finished(self.DAMAGE):
+        elif self.action_not_finished(self.DAMAGE) and action != self.FALL:
             pass
         elif self.action_not_finished(self.JUMP):
             self.move_while_jumping(direction)
