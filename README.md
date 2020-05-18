@@ -58,7 +58,8 @@ You can also change the fighter creator method to play as Kakashi:
 ```python
 self.player_one = self.create_kakashi(False, self.PLAYER_ONE_POSITION)
 ```
-As of 18th May, Kakashi does not have jumping sprites and the game will crash when you jump as him, however Kakashi works completely fine as an AI.
+As of 18th May, Kakashi does not have jumping sprites and the game will crash when you jump as him, however Kakashi works completely fine as an AI.  
+
 <img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss2.png?raw=true" style="margin:auto" width="60%" alt="An AI vs AI battle"/>
 
 ## Todo
