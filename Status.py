@@ -66,7 +66,7 @@ class StatusBar:
         return health_bar
 
     def scale_health_bar_img(self, img):
-        width = int(self.CANVAS_WIDTH * 0.2)
+        width = int(self.CANVAS_WIDTH * 0.23)
         height = int(width * (img.size[1] / img.size[0]))
         img = img.resize((width, height), Image.ANTIALIAS)
         if self.side == "left":

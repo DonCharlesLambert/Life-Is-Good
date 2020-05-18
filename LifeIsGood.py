@@ -26,7 +26,7 @@ class Battle:
 
         self.set_background()
         self.player_one = self.create_deidara(True, self.PLAYER_ONE_POSITION)
-        self.player_two = self.create_sasori(True, self.PLAYER_TWO_POSITION)
+        self.player_two = self.create_kakashi(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
@@ -127,6 +127,9 @@ class Battle:
 
 
 root = Tk()
+root.title("Life Is Good")
+img = PhotoImage(file="sprites\Future\smile.png")
+root.iconphoto(False, img)
 Battle(root)
 root.mainloop()
 input()
