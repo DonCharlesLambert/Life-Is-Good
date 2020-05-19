@@ -10,7 +10,8 @@ class Fighter:
     SPRITE_FOLDER = 'sprites'
 
     # MOVEMENT & COLLISION CONSTANTS
-    NEXT_TO_THRESHOLD = 35
+    NEXT_TO_THRESHOLD = 50
+    TOO_CLOSE_THRESHOLD = NEXT_TO_THRESHOLD / 1.5
     MOVE_BACK = 70
     JUMP_HEIGHT = 20
 
@@ -163,6 +164,9 @@ class Fighter:
     def next_to_opponent(self):
         return abs(self.opponent.pos()[0] - self.pos()[0]) < self.NEXT_TO_THRESHOLD
 
+    def too_close_to_opponent(self):
+        return abs(self.opponent.pos()[0] - self.pos()[0]) < self.TOO_CLOSE_THRESHOLD
+
     ''''''''''''''''''''''''''''''''''''''''''''
     '''           DRAW TO CANVAS             '''
     ''''''''''''''''''''''''''''''''''''''''''''
@@ -253,6 +257,7 @@ class Fighter:
 
         elif self.action_is(self.DAMAGE):
             self.take_damage()
+            self.move_into_hit_box()
 
         if self.end_of_action(self.FALL):
             self.move_back()
@@ -282,3 +287,13 @@ class Fighter:
         self.status_bar.update()
         if self.health <= 0:
             self.die()
+
+    def move_into_hit_box(self):
+        if self.direction == self.opponent.direction:
+            self.switch_direction()
+
+        if self.too_close_to_opponent():
+            if self.direction == self.RIGHT:
+                self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * -self.speed * 2, 0)
+            else:
+                self.canvas.move(self.sprite_item, self.CANVAS_WIDTH * self.speed * 2, 0)
