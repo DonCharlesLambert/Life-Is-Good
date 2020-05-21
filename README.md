@@ -53,7 +53,7 @@ The first argument is whether or not the fighter is an AI or not, just change on
 self.player_one = self.create_sasori(False, self.PLAYER_ONE_POSITION)  
 self.player_two = self.create_deidara(False, self.PLAYER_TWO_POSITION)
 ```
-You can also change the fighter creator method to play as other characters:
+You can also change which method is invoked in order to play as other characters:
 
 ```python
 self.player_one = self.create_kisame(False, self.PLAYER_ONE_POSITION)

@@ -25,8 +25,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = self.create_kisame(False, self.PLAYER_ONE_POSITION)
-        self.player_two = self.create_kakashi(True, self.PLAYER_TWO_POSITION)
+        self.player_one = self.create_sasori(False, self.PLAYER_ONE_POSITION)
+        self.player_two = self.create_kisame(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
@@ -122,7 +122,7 @@ class Battle:
         fighter.set_animation_sprites("damage", list(range(9, 11)))
         fighter.set_animation_sprites("fall", list(range(9, 15)))
         fighter.set_animation_sprites("attack", list(range(15, 28)))
-        fighter.set_animation_sprites("jump", (list(range(28, 33))+list(range(28, 33))))
+        fighter.set_animation_sprites("jump", [28, 28, 29, 29, 30, 30, 31, 31, 32, 32])
         return fighter
 
     def create_sasori(self, ai, position):
@@ -132,7 +132,7 @@ class Battle:
         fighter.set_animation_sprites("damage", list(range(12, 14)))
         fighter.set_animation_sprites("fall", list(range(12, 18)))
         fighter.set_animation_sprites("attack", list(range(18, 40)))
-        fighter.set_animation_sprites("jump", (list(range(40, 45)) + list(range(40, 45))))
+        fighter.set_animation_sprites("jump", [40, 40, 41, 41, 42, 42, 43, 43, 44])
         return fighter
 
 

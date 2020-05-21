@@ -229,6 +229,8 @@ class Fighter:
             pass
         elif self.action_not_finished(self.JUMP):
             self.move_while_jumping(direction)
+        elif self.being_attacked() and action != self.DAMAGE and action != self.FALL:
+            pass
         else:
             if (direction != self.REMAIN) and (not direction == self.direction):
                 self.direction = direction
