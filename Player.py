@@ -10,7 +10,7 @@ class Fighter:
     SPRITE_FOLDER = 'sprites'
 
     # MOVEMENT & COLLISION CONSTANTS
-    NEXT_TO_THRESHOLD = 50
+    NEXT_TO_THRESHOLD = 40
     TOO_CLOSE_THRESHOLD = NEXT_TO_THRESHOLD / 1.5
     MOVE_BACK = 70
     JUMP_HEIGHT = 20
@@ -131,8 +131,21 @@ class Fighter:
     def being_attacked(self):
         if self.opponent is None:
             return False
-        elif self.next_to_opponent() and self.opponent.action_is(self.ATTACK):
+        elif self.next_to_opponent() and (self.is_facing_opponent() or self.opponent_is_facing_back()) and self.opponent.action_is(self.ATTACK):
             return True
+
+    def is_facing_opponent(self):
+        if self.opponent.is_facing(self.RIGHT) and self.is_facing(self.LEFT):
+            return self.opponent.pos()[0] < self.pos()[0]
+        elif self.opponent.is_facing(self.LEFT) and self.is_facing(self.RIGHT):
+            return self.opponent.pos()[0] > self.pos()[0]
+        return False
+
+    def opponent_is_facing_back(self):
+        if self.opponent.is_facing(self.RIGHT):
+            return self.opponent.pos()[0] < self.pos()[0]
+        else:
+            return self.opponent.pos()[0] > self.pos()[0]
 
     def has_received_combo(self):
         if self.next_to_opponent() and self.opponent.action_is(self.ATTACK) and self.opponent.end_of_animation():
