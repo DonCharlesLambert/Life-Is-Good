@@ -86,6 +86,7 @@ class Fighter:
 
     def attack(self):
         if self.can_attack():
+            self.reset_attack_timer()
             self.change_state(self.REMAIN, self.ATTACK)
 
     def jump(self):
@@ -150,7 +151,7 @@ class Fighter:
 
     def can_attack(self):
         # doesn't check anything else 'cus change_state checks that
-        return (time.time() - self.attack_cooldown) > 2
+        return (time.time() - self.attack_cooldown) > 4
 
     def opponent_is_facing_back(self):
         if self.opponent.is_facing(self.RIGHT):
@@ -287,9 +288,6 @@ class Fighter:
         elif self.action_is(self.DAMAGE):
             self.take_damage()
             self.move_into_hit_box()
-
-        elif self.action_is(self.ATTACK) and self.end_of_animation():
-            self.reset_attack_timer()
 
         if self.end_of_action(self.FALL):
             self.move_back()

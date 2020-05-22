@@ -9,6 +9,9 @@ Life was good, but life is better.
 
 Life Is Good is a Naruto fighting game made using the tkinter library for Python. The project is a hobby for when I want to procrastinate.
 
+<img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss3.gif?raw=true" style="margin:auto" width="60%" alt="Gif showing gameplay"/>
+
+
 ## Get it Running
 1. Open Terminal  
 
@@ -62,6 +65,3 @@ self.create_itachi(True, self.PLAYER_ONE_POSITION)
 ```
 
 <img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss2.png?raw=true" style="margin:auto" width="60%" alt="An AI vs AI battle"/>
-
-## Todo
-Attack cooldowns

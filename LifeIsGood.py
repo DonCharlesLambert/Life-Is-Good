@@ -25,8 +25,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = self.create_sasori(False, self.PLAYER_ONE_POSITION)
-        self.player_two = self.create_itachi(True, self.PLAYER_TWO_POSITION)
+        self.player_one = self.create_deidara(False, self.PLAYER_ONE_POSITION)
+        self.player_two = self.create_kisame(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
