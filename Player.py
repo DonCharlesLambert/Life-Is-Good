@@ -2,6 +2,7 @@ from PIL import Image
 from PIL import ImageTk
 import os
 from Status import StatusBar
+import time
 
 
 # 🍝
@@ -50,6 +51,7 @@ class Fighter:
         self.action = self.STANCE
 
         self.speed = 0.02
+        self.attack_cooldown = 0
         self.health = self.MAX_HEALTH
         self.dead = False
 
@@ -83,7 +85,8 @@ class Fighter:
         self.change_state(self.SWITCH, self.RUN)
 
     def attack(self):
-        self.change_state(self.REMAIN, self.ATTACK)
+        if self.can_attack():
+            self.change_state(self.REMAIN, self.ATTACK)
 
     def jump(self):
         self.change_state(self.REMAIN, self.JUMP)
@@ -115,6 +118,10 @@ class Fighter:
             self.direction = self.RIGHT
         self.animation_no = 0
 
+    def reset_attack_timer(self):
+        self.attack_cooldown = time.time()
+        self.status_bar.update_chakra(False)
+
     ''''''''''''''''''''''''''''''''''''''''''''
     '''              GETTERS                 '''
     ''''''''''''''''''''''''''''''''''''''''''''
@@ -140,6 +147,10 @@ class Fighter:
         elif self.opponent.is_facing(self.LEFT) and self.is_facing(self.RIGHT):
             return self.opponent.pos()[0] > self.pos()[0]
         return False
+
+    def can_attack(self):
+        # doesn't check anything else 'cus change_state checks that
+        return (time.time() - self.attack_cooldown) > 2
 
     def opponent_is_facing_back(self):
         if self.opponent.is_facing(self.RIGHT):
@@ -265,8 +276,11 @@ class Fighter:
     ''''''''''''''''''''''''''''''''''''''''''''
     '''       HANDLING TIME PASSING          '''
     ''''''''''''''''''''''''''''''''''''''''''''
-    # animating the character and moving
+    # animating the character and moving -- NEEDS REFACTOR
     def animate(self):
+        if self.can_attack():
+            self.status_bar.update_chakra(True)
+
         if self.dead and self.end_of_action(self.FALL):
             return
 
@@ -274,8 +288,15 @@ class Fighter:
             self.take_damage()
             self.move_into_hit_box()
 
+        elif self.action_is(self.ATTACK) and self.end_of_animation():
+            self.reset_attack_timer()
+
         if self.end_of_action(self.FALL):
             self.move_back()
+            self.stance()
+
+        # possibly 🍝
+        if self.animation_no > (0.3 * (len(self.sprites[self.action]))) and self.action_is(self.ATTACK) and not self.opponent.action_is(self.DAMAGE):
             self.stance()
 
         elif self.end_of_action(self.JUMP):
@@ -299,7 +320,7 @@ class Fighter:
 
     def take_damage(self):
         self.health -= self.DAMAGE_PER_SECOND
-        self.status_bar.update()
+        self.status_bar.update_health()
         if self.health <= 0:
             self.die()
 
