@@ -25,8 +25,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = self.create_itachi(False, self.PLAYER_ONE_POSITION)
-        self.player_two = self.create_kisame(True, self.PLAYER_TWO_POSITION)
+        self.player_one = self.create_kakashi(False, self.PLAYER_ONE_POSITION)
+        self.player_two = self.create_itachi(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
@@ -113,6 +113,7 @@ class Battle:
         fighter.set_animation_sprites("damage", list(range(12, 14)))
         fighter.set_animation_sprites("fall", list(range(12, 18)))
         fighter.set_animation_sprites("attack", list(range(18, 31)))
+        fighter.set_animation_sprites("jump", [31, 31, 32, 32, 33, 33, 34, 34, 35, 35])
         return fighter
 
     def create_kisame(self, ai, position):
@@ -140,7 +141,7 @@ class Battle:
         fighter.set_animation_sprites("stance", list(range(0, 4)))
         fighter.set_animation_sprites("run", list(range(4, 10)))
         fighter.set_animation_sprites("damage", list(range(10, 12)))
-        fighter.set_animation_sprites("fall", list(range(10, 17)))
+        fighter.set_animation_sprites("fall", list(range(10, 16)))
         fighter.set_animation_sprites("attack", list(range(16, 29)))
         fighter.set_animation_sprites("jump", [29, 29, 30, 30, 31, 31, 32, 32, 33, 33])
         return fighter
