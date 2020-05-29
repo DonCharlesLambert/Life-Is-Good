@@ -65,3 +65,8 @@ self.create_itachi(True, self.PLAYER_ONE_POSITION)
 ```
 
 <img src="https://github.com/DonCharlesLambert/Life-Is-Good/blob/master/sprites/ss2.png?raw=true" style="margin:auto" width="60%" alt="An AI vs AI battle"/>
+
+## Todo
+1) Projectiles
+2) Menu
+3) Specials (How to go about this?)

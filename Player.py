@@ -121,7 +121,6 @@ class Fighter:
 
     def reset_attack_timer(self):
         self.attack_cooldown = time.time()
-        self.status_bar.update_chakra(False)
 
     ''''''''''''''''''''''''''''''''''''''''''''
     '''              GETTERS                 '''
@@ -151,7 +150,7 @@ class Fighter:
 
     def can_attack(self):
         # doesn't check anything else 'cus change_state checks that
-        return (time.time() - self.attack_cooldown) > 4
+        return (time.time() - self.attack_cooldown) > 0.5
 
     def opponent_is_facing_back(self):
         if self.opponent.is_facing(self.RIGHT):
@@ -279,9 +278,6 @@ class Fighter:
     ''''''''''''''''''''''''''''''''''''''''''''
     # animating the character and moving -- NEEDS REFACTOR
     def animate(self):
-        if self.can_attack():
-            self.status_bar.update_chakra(True)
-
         if self.dead and self.end_of_action(self.FALL):
             return
 
@@ -321,6 +317,8 @@ class Fighter:
         self.status_bar.update_health()
         if self.health <= 0:
             self.die()
+        elif self.health/self.MAX_HEALTH < 0.4:
+            self.status_bar.update_chakra()
 
     def move_into_hit_box(self):
         if self.direction == self.opponent.direction:
