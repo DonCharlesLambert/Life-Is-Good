@@ -8,7 +8,7 @@ from PIL import ImageTk
 
 WIDTH = 600
 HEIGHT = 400
-
+#bruh
 
 class Battle:
     images = []
@@ -25,8 +25,8 @@ class Battle:
         self.canvas.bind("<KeyRelease>", self.key_release)
 
         self.set_background()
-        self.player_one = self.create_itachi(False, self.PLAYER_ONE_POSITION)
-        self.player_two = self.create_sasori(True, self.PLAYER_TWO_POSITION)
+        self.player_one = self.create_kisame(False, self.PLAYER_ONE_POSITION)
+        self.player_two = self.create_deidara(True, self.PLAYER_TWO_POSITION)
 
         self.canvas.pack()
         self.canvas.focus_set()
