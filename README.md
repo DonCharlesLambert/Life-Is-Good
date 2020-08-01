@@ -69,4 +69,4 @@ self.create_itachi(True, self.PLAYER_ONE_POSITION)
 ## Todo
 1) Projectiles
 2) Menu
-3) Specials (How to go about this?)...
+3) Specials (How to go about this?)
